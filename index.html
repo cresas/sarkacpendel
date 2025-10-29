@@ -7,7 +7,7 @@
 
 <title>Sarkaç Pendeli Simülasyonu</title>
 <style>
-        body {
+       body {
             font-family: sans-serif;
             background-color: #f0f0f0;
             display: flex;
@@ -19,13 +19,13 @@
         }
 
         .LEIFI_animation {
-            width: 800px;
+            
             max-width: 100%; 
             display: flex;
             flex-direction: row; 
             border: 1px solid #ccc;
             background-color: #FAFAFA;
-            overflow: hidden;
+			overflow: visible;
             font-size: 13px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
@@ -82,6 +82,8 @@
             justify-content: space-between; 
             align-items: center;
             gap: 10px;
+			  font-weight: bold;
+			
         }
         
         .setting-item label {
@@ -94,6 +96,7 @@
             display: flex;
             align-items: center;
             gap: 5px;
+			  font-weight: normal;
         }
 
         .setting-item .input-group input[type="text"] {
@@ -121,7 +124,9 @@
             align-items: center;
             gap: 5px; 
         }
-
+		.group-options .LEIFI_label {
+            font-weight: bold;
+        }
         /* 4. Grup: Alt Bilgi (Kaldırıldı) */
         /* .group-footer artık yok */
         
@@ -142,6 +147,12 @@
 
 /* --- MOBİL UYUMLULUK --- */
 
+@media (min-width: 801px) {
+    .LEIFI_animation {
+        transform: scale(1.75);
+        transform-origin: top center;
+    }
+	}
 @media (max-width: 800px) {
     .LEIFI_animation {
         flex-direction: column; 
@@ -155,7 +166,7 @@
         overflow-y: visible; 
     }
     
-    .LEIFI_leinwand {
+ .LEIFI_leinwand {
         border-left: none; 
         border-top: 1px solid #000; 
         width: 100%;
@@ -185,32 +196,41 @@
         <div class="panel-group group-settings">
             <div class="checkbox-item">
                 <input type="checkbox" class="LEIFI_checkbox" id="WF18_cbSlow" name="WF18_cbSlow" value="on">
-                <label class="LEIFI_label" for="WF18_cbSlow">Ağır çekim</label>
+                <label class="LEIFI_label" for="WF18_cbSlow"><b>Ağır çekim</b></label>
             </div>
             
-            <div class="setting-item">
-                <span class="LEIFI_span">Sarkaç uzunluğu:</span>
-                <input type="text" class="LEIFI_text" id="WF18_ipL" value="5,000">
-                <span class="LEIFI_span">m</span>
-            </div>
+           <div class="setting-item">
+    <span class="LEIFI_span">Sarkaç uzunluğu:</span>
+    
+    <div class="input-group">
+        <input type="text" class="LEIFI_text" id="WF18_ipL" value="5,000">
+        <span class="LEIFI_span">m</span>
+    </div>
+</div>
             
             <div class="setting-item">
                 <span class="LEIFI_span">Yer çekimi ivmesi:</span>
+				   <div class="input-group">
                 <input type="text" class="LEIFI_text" id="WF18_ipG" value="9,81">
                 <span class="LEIFI_span">m/s²</span>
             </div>
-            
+             </div>
+			 
             <div class="setting-item">
                 <span class="LEIFI_span">Kütle:</span>
+				 <div class="input-group">
                 <input type="text" class="LEIFI_text" id="WF18_ipM" value="1,000">
                 <span class="LEIFI_span">kg</span>
             </div>
+			 </div>
 
             <div class="setting-item">
                 <span class="LEIFI_span">Genlik:</span>
+				 <div class="input-group">
                 <input type="text" class="LEIFI_text" id="WF18_ipA" value="10,0">
                 <span class="LEIFI_span">°</span>
             </div>
+			</div>
         </div>
 
         <div class="panel-group group-options">
