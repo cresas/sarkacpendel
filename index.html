@@ -820,7 +820,7 @@ function drawElongation () {
   var sMax = l*alpha0;                                     // Uzamanın maksimum miktarı (m)
   var s = sMax*cosPhi;                                     // Uzamanın anlık değeri (m) 
   diagram(1,xD,yD1,sMax);                                  // Grafik çiz
-  alignText(symbolElongation,1,xD-25,yD1-130);             // Etiket (Uzama sembolü)
+  alignText("x",1,xD-25,yD1-130);             // Etiket (Uzama sembolü)
   alignText(text11,1,xD-25,yD1-118);                       // Etiket (Birim m)
   ctx.beginPath();                                         // Yeni yol
   ctx.lineWidth = 3;                                       // Çizgi kalınlığı
